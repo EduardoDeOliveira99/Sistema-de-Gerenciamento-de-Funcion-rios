@@ -1,0 +1,20 @@
+# Sistema de Gerenciamento de Funcionários | Devs2Blu | Senac | 2024
+
+Este é um sistema simples para gerenciar funcionários, implementado em Java. O sistema segue o princípio SOLID da responsabilidade única (Single Responsibility Principle) e integra dois padrões de projeto: Decorator e Iterator.
+
+## Funcionalidades
+
+- Adicionar funcionários
+- Listar funcionários
+- Calcular o custo total da folha de pagamento
+- Aplicar aumento salarial
+- Adicionar bônus aos funcionários
+
+## Estrutura do Projeto
+
+O projeto está dividido em várias branches, cada uma implementando uma parte específica do sistema:
+
+- **branch-1**: Classe `Funcionario` com atributos e métodos getter/setter.
+- **branch-2**: Método para calcular aumento salarial.
+- **branch-3**: Classe `Empresa` para gerenciar uma lista de funcionários.
+- **branch-4**: Interface de console para adicionar, listar e calcular o custo total da folha de pagamento, e integração dos padrões de projeto Decorator e Iterator.
