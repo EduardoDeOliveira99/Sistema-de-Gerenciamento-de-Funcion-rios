@@ -1,4 +1,7 @@
 // Branch 4
+package ProjetoGestao;
+
+
 public abstract class FuncionarioDecorator extends Funcionario {
     protected Funcionario funcionario;
 
