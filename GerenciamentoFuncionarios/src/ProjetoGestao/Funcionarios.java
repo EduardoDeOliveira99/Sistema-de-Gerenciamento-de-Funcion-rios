@@ -1,19 +1,20 @@
-package ProjetoGestao;
 
-public abstract class Funcionarios {
+public class Funcionarios {
 	
 	private String nome;
 	private int idade;
 	private double salario;
+	private String cargo;
 	
 	
 	public Funcionarios() {}
 	
 	
-	public Funcionarios(String nome, int idade, double salario) {
+	public Funcionarios(String nome, int idade, double salario, String cargo) {
 		this.nome = nome;
 		this.idade = idade;
 		this.salario = salario;
+		this.cargo = cargo;
 	}
 	
 	public String getNome() {
@@ -34,6 +35,17 @@ public abstract class Funcionarios {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+	public void CalcSalario(double TaxaAumento){
+		CalcSalario aumentoSalarial = new AumentoSalario();
+		salario = aumentoSalarial.CalcSalario(TaxaAumento, salario);
+	}
 	
 	
+
 }

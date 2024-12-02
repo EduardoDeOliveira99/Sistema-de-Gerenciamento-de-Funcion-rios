@@ -1,16 +1,21 @@
-package ProjetoGestao;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Empresa {
-	private ArrayList<Funcionarios> funcionarios = new ArrayList<>();
-	
+public class Empresa implements Subject{
+    private List<Funcionarios> funcionarios;
+    private List<Observer> observers;
+
+    public Empresa() {
+        funcionarios = new ArrayList<>();
+        observers = new ArrayList<>();
+    }
 	public void addFuncionario(Funcionarios funcionario) {
 		funcionarios.add(funcionario);
 	}
 	
 	public Funcionarios getFuncionario(int i){
-		Funcionarios novoFuncionario = funcionarios.get(i);
+		Funcionarios novoFuncionario = funcionarios.get(i -1);
 		return novoFuncionario;
 	}
 
@@ -18,11 +23,28 @@ public class Empresa {
 	public String toString() {
 		String informacao = "";
 		for(Funcionarios funcionario: funcionarios) {
-			informacao = informacao+funcionario;
+			informacao = informacao + funcionario;
 		}
 		
 		return informacao;
 	}
+
+	@Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
+    }
 	
 	
 	
