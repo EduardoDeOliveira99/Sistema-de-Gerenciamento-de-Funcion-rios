@@ -35,6 +35,7 @@ public class Main {
                 
                 funcionario = new Funcionarios(nome, idade, salario, cargo);
                 empresa.addFuncionario(funcionario);
+                empresa.notifyObservers("Funcionario adicionado com sucesso!");
                 System.out.println();
                 break;
                 case 2:
@@ -51,6 +52,7 @@ public class Main {
                     System.out.print("Qual a taxa de aumento desejada: ");
                     double TaxaAumento = scanner.nextDouble();
                     funcionarioAdd.CalcSalario(TaxaAumento);
+                    empresa.notifyObservers("Aumento realizado com sucesso!");
                     System.out.println("");
                     break;
                 case 4:
