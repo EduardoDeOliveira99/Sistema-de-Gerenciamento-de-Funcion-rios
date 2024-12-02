@@ -1,3 +1,5 @@
+package ProjetoGestao;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +24,10 @@ public class Empresa implements Subject{
 	@Override
 	public String toString() {
 		String informacao = "";
+		int i = 1;
 		for(Funcionarios funcionario: funcionarios) {
-			informacao = informacao + funcionario;
+			informacao = informacao + i +funcionario + "\n\n";
+			i++;
 		}
 		
 		return informacao;
@@ -49,3 +53,4 @@ public class Empresa implements Subject{
 	
 	
 }
+
